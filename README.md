@@ -9,7 +9,7 @@ When selling $X$ shares by time $T$, selling fast costs more in market impact, w
 1. **Computes the optimal schedule** in closed form, the efficient frontier, and a version for time-varying volatility (`optexec.ac`).
 2. **Verifies it** against Monte Carlo simulation and against a generic numerical optimiser (`optexec.simulate`, `tests/`).
 3. **Calibrates the model's assumptions on data** (`optexec.calibration`, `optexec.volatility`): is impact linear in order flow or concave? how much of it is temporary? does volatility change during the day? are GARCH forecasts better than a constant?
-4. **Runs on real data**: Binance BTCUSDT 1-minute klines, in `data/raw/`.
+4. **Runs on real data**: Binance BTCUSDT 1-minute klines, downloaded into `data/raw/` (not stored in the repository).
 
 The mathematics is derived in [`docs/theory.md`](docs/theory.md).
 
