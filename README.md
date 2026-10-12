@@ -19,10 +19,11 @@ The mathematics is derived in [`docs/theory.md`](docs/theory.md).
 pip install -r requirements.txt
 python -m pytest -q                              # tests
 python scripts/run_validation.py                 # study on a simulated market (truth known)
+python scripts/download_binance.py --symbol BTCUSDT --interval 1m --start 2026-07 --end 2026-09   # fetch the data into data/raw/
 python scripts/run_real_data.py --symbol BTCUSDT # study on the data in data/raw -> results/
 ```
 
-To fetch other months or another symbol: `python scripts/download_binance.py --symbol ETHUSDT --interval 1m --start 2026-07 --end 2026-09`.
+To use another symbol or other months, change `--symbol`, `--start` and `--end` in the download command.
 
 ## Findings on real data
 
@@ -85,7 +86,7 @@ src/optexec/   ac.py (model), simulate.py, data.py, calibration.py, volatility.p
 scripts/       run_validation.py, run_real_data.py, download_binance.py
 tests/         unit and end-to-end tests
 docs/          theory.md, validation_results.md, figures/ (simulated data)
-data/raw/      Binance 1-minute klines used in the study
+data/raw/      Binance 1-minute klines (created by download_binance.py, git-ignored)
 results/       output of run_real_data.py: summary.md and figures/ (real data)
 ```
 
